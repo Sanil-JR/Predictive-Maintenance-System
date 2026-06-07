@@ -5,6 +5,7 @@ This project predicts the Remaining Useful Life (RUL) of aircraft engines using 
 
 ## Dataset
 NASA CMAPSS FD001 Dataset
+Source: NASA Prognostics Center of Excellence
 
 ## Objective
 To predict the number of operational cycles remaining before engine failure and support predictive maintenance decisions.
