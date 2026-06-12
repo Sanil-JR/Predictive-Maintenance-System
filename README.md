@@ -1,16 +1,16 @@
-# ✈️ Predictive Maintenance — RUL Estimation (NASA CMAPSS)
+#  Predictive Maintenance — RUL Estimation (NASA CMAPSS)
 
 Predicting the **Remaining Useful Life (RUL)** of aircraft jet engines using sensor time-series data from the NASA CMAPSS dataset.
 
 ---
 
-## 📌 Problem Statement
+##  Problem Statement
 
 Aircraft engines generate continuous sensor data during operation. As components degrade over time, failure risk increases. Unplanned failures cause:
 
-* 🔴 **Safety risks** — catastrophic failure mid-flight
-* 💰 **High costs** — emergency maintenance is 3–5x more expensive than scheduled
-* ⏱️ **Downtime losses** — airlines lose ~$150K/hour per grounded aircraft
+* 1. **Safety risks** — catastrophic failure mid-flight
+* 2. **High costs** — emergency maintenance is 3–5x more expensive than scheduled
+* 3. **Downtime losses** — airlines lose ~$150K/hour per grounded aircraft
 
 **Goal:** Predict how many operational cycles remain before an engine fails — enabling maintenance *before* failure, not *after*.
 
@@ -18,7 +18,7 @@ Aircraft engines generate continuous sensor data during operation. As components
 
 ---
 
-## 📂 Dataset
+##  Dataset
 
 **NASA CMAPSS** (Commercial Modular Aero-Propulsion System Simulation)
 
@@ -31,11 +31,11 @@ Aircraft engines generate continuous sensor data during operation. As components
 
 **26 columns per file:** `engine_id`, `cycle`, `operational_setting_1/2/3`, `sensor_1` to `sensor_21`
 
-📥 Download: https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository
+ Download: https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```text
 predictive-maintenance-rul/
@@ -57,7 +57,7 @@ predictive-maintenance-rul/
 
 ---
 
-## 🔄 Pipeline
+##  Pipeline
 
 Each of the 4 datasets goes through the same pipeline independently:
 
@@ -85,7 +85,7 @@ Then cross-dataset results are combined into a unified comparison table.
 
 ---
 
-## ⚙️ Key Design Decisions
+## Key Design Decisions
 
 ### 1. RUL Clipping at 125
 
@@ -107,7 +107,7 @@ Rolling mean over 10 cycles per engine captures degradation trends and reduces s
 
 ---
 
-## 📊 Results
+##  Results
 
 | Dataset | Model         | MAE   | RMSE  | R²     |
 | ------- | ------------- | ----- | ----- | ------ |
@@ -128,7 +128,7 @@ R² = 0.897
 
 ---
 
-## 💼 Business Impact
+## Business Impact
 
 An RMSE of approximately 18 cycles means predictions are accurate within about 18 flight cycles.
 
@@ -138,21 +138,21 @@ This provides roughly an **18-day early warning window** for maintenance plannin
 
 | Zone        | RUL Threshold | Action               |
 | ----------- | ------------- | -------------------- |
-| 🔴 Critical | < 30 cycles   | Immediate inspection |
-| 🟠 Warning  | 30–60 cycles  | Schedule maintenance |
-| 🟢 Safe     | > 60 cycles   | Continue monitoring  |
+| Critical | < 30 cycles   | Immediate inspection |
+| Warning  | 30–60 cycles  | Schedule maintenance |
+| Safe     | > 60 cycles   | Continue monitoring  |
 
 **Estimated Savings:** ~$400K per avoided emergency maintenance event.
 
 ---
 
-## 🔍 Explainability
+## Explainability
 
 SHAP (SHapley Additive exPlanations) is used to explain XGBoost predictions and identify which sensors contribute most to Remaining Useful Life estimation.
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Clone Repository
 
@@ -177,7 +177,7 @@ Run all cells from top to bottom.
 
 ---
 
-## 📦 Requirements
+##  Requirements
 
 ```text
 pandas
@@ -193,7 +193,7 @@ jupyter
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 | Improvement           | Benefit                           |
 | --------------------- | --------------------------------- |
@@ -203,7 +203,7 @@ jupyter
 
 ---
 
-## 📁 Saved Models
+##  Saved Models
 
 ```text
 rf_FD001.pkl
@@ -225,7 +225,7 @@ scaler_FD004.pkl
 
 ---
 
-## 🛠️ Skills Demonstrated
+## Skills Demonstrated
 
 * Predictive Maintenance
 * Machine Learning
@@ -240,14 +240,9 @@ scaler_FD004.pkl
 
 ---
 
-## 👤 Author
+## Author
 
 **Sanil J R**
 
-Mechanical Engineer | Data Science Enthusiast
+ Data scientist
 
----
-
-## 📄 License
-
-This project uses the NASA CMAPSS dataset for educational and research purposes.
